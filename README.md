@@ -1,1 +1,1 @@
-POD classes s
+Exercises for Distributed Objects Programming in Java, ITBA 2023 C2

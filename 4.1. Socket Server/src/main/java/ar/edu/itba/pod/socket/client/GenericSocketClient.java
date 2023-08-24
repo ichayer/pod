@@ -20,8 +20,7 @@ import java.net.Socket;
 
         public String sendMessage(String msg) throws IOException {
             this.out.println(msg);
-            String resp = this.in.readLine();
-            return resp;
+            return this.in.readLine();
         }
 
         public void stopConnection() throws IOException {

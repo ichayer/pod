@@ -1,7 +1,7 @@
 package ar.edu.itba.pod.concurrency.exercises.e1;
 
 /**
- * Interfaz for a generic service with 3 categories of methods:
+ * Interface for a generic service with 3 categories of methods:
  * 
  * <ul>
  * <li>String methods represented by {@link #echo(String)} and

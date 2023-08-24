@@ -38,7 +38,7 @@ public interface GenericService {
     void addToServiceQueue(String name);
 
     /**
-     * @returns the name at the beggining of the queue.
+     * @returns the name at the beginning of the queue.
      * @throws IllegalStateException
      *             if queue is empty.
      */

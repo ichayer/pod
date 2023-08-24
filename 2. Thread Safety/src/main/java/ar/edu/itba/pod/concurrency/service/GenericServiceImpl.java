@@ -24,13 +24,6 @@ public class GenericServiceImpl implements GenericService {
 
     @Override
     public String toUpper(String message) {
-        // Se podria haber resuelto con un return message == null? null : message.toUpperCase();
-        // pero querian que nos acordemos como usar el Optional. Paw flashbacks.
-
-        // Optional es un wrapper que encapsula un objeto. Segun los
-        // puristas, hacer un null check con un if esta mal. El optional evita esto.
-
-        // Hay 3 formas de construir un optional: empty, ofNullable y of.
         return Optional.ofNullable(message).map(String::toUpperCase).orElse(null);
     }
 

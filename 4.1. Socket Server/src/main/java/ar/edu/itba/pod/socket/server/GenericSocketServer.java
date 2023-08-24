@@ -15,13 +15,12 @@ public class GenericSocketServer implements Closeable {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
-    private GenericService service;
 
     public void start(int port) throws IOException {
         logger.info("starting server on port {}", port);
         boolean loop = true;
 
-        this.service = new GenericServiceImpl();
+        GenericService service = new GenericServiceImpl();
         serverSocket = new ServerSocket(port);
         clientSocket = serverSocket.accept();
         out = new PrintWriter(clientSocket.getOutputStream(), true);
@@ -47,9 +46,11 @@ public class GenericSocketServer implements Closeable {
     }
 
     public static void main(String[] args) throws IOException {
-        // Esta linea permite instanciar el objeto y como el objeto
-        // Implementa closable, lo va a cerrar automaticamente
-        // Para evitar que nosotros tengamos que hacerlo en el finally
+        /*
+         This line allows instantiating the object, and since the object
+         implements Closable, it will be automatically closed
+         to prevent us from having to do it in the 'finally' block.
+        */
         try (GenericSocketServer server = new GenericSocketServer()) {
             server.start(PORT);
         }

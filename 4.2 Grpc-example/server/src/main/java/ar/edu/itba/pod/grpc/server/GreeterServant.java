@@ -9,10 +9,10 @@ public class GreeterServant extends GreeterGrpc.GreeterImplBase {
 
     @Override
     public void sayHello(HelloRequest request, StreamObserver<HelloReply> responseObserver) {
-        // Hago lo que tengo que hacer con el request
+        // Do what you need to do with the request.
         HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + request.getName()).build();
 
-        // Esto va fijo para devolver la respuesta al cliente con el objeto observer
+        // This is needed to return the response to the client using the observer object.
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
     }

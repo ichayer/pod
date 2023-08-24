@@ -31,7 +31,7 @@ public class Client {
 
 			GreeterGrpc.GreeterBlockingStub blockingStub = GreeterGrpc.newBlockingStub(channel);;
 			HelloRequest helloRequest = HelloRequest.newBuilder().setName(user).build();
-			// Llama al servidor, es bloqueante esperando a que llegue la respuesta
+			// Calls the server, it's blocking and waits for the response to arrive.
 			HelloReply reply = blockingStub.sayHello(helloRequest);
 			System.out.println(reply.getMessage());
 		} finally {
