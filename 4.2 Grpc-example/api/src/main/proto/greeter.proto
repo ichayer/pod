@@ -3,13 +3,12 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "ar.edu.itba.pod.grpc";
 
-
-// En gRPC se manda todo en un UNICO objeto (HelloRequest) y todo llego en un UNICO objeto de respuesta (HelloReply)
-// El request es un objeto que tiene todos los parametros que se mandan
+// In gRPC, everything is sent within a SINGLE object (HelloRequest),
+// and everything is received in a SINGLE response object (HelloReply).
+// The request is an object that contains all the parameters being sent.
 service Greeter {
  rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
-
 
 // The request message containing the user's name.
 message HelloRequest {
